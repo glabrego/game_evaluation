@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Evaluations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>R1</th>
+      <th>R2</th>
+      <th>R3</th>
+      <th>R4</th>
+      <th>R5</th>
+      <th>R6</th>
+      <th>R7</th>
+      <th>R8</th>
+      <th>R9</th>
+      <th>R10</th>
+      <th>R11</th>
+      <th>R12</th>
+      <th>R13</th>
+      <th>R14</th>
+      <th>R15</th>
+      <th>R16</th>
+      <th>R17</th>
+      <th>R18</th>
+      <th>R19</th>
+      <th>R20</th>
+      <th>R21</th>
+      <th>R22</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @evaluations.each do |evaluation| %>
+      <tr>
+        <td><%= evaluation.r1 %></td>
+        <td><%= evaluation.r2 %></td>
+        <td><%= evaluation.r3 %></td>
+        <td><%= evaluation.r4 %></td>
+        <td><%= evaluation.r5 %></td>
+        <td><%= evaluation.r6 %></td>
+        <td><%= evaluation.r7 %></td>
+        <td><%= evaluation.r8 %></td>
+        <td><%= evaluation.r9 %></td>
+        <td><%= evaluation.r10 %></td>
+        <td><%= evaluation.r11 %></td>
+        <td><%= evaluation.r12 %></td>
+        <td><%= evaluation.r13 %></td>
+        <td><%= evaluation.r14 %></td>
+        <td><%= evaluation.r15 %></td>
+        <td><%= evaluation.r16 %></td>
+        <td><%= evaluation.r17 %></td>
+        <td><%= evaluation.r18 %></td>
+        <td><%= evaluation.r19 %></td>
+        <td><%= evaluation.r20 %></td>
+        <td><%= evaluation.r21 %></td>
+        <td><%= evaluation.r22 %></td>
+        <td><%= link_to 'Show', evaluation %></td>
+        <td><%= link_to 'Edit', edit_evaluation_path(evaluation) %></td>
+        <td><%= link_to 'Destroy', evaluation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Evaluation', new_evaluation_path %>
+
+<p>System Quality</p>
+<%= Evaluation.system_quality %>
+<p>Euclidean Distance from real to ideal system</p>
+<%= Evaluation.euclidean_distance %>
