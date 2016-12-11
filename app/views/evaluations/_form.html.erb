@@ -1,0 +1,127 @@
+<%= form_for(evaluation) do |f| %>
+  <% if evaluation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(evaluation.errors.count, "error") %> prohibited this evaluation from being saved:</h2>
+
+      <ul>
+      <% evaluation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :r1 %>
+    <%= f.number_field :r1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r2 %>
+    <%= f.number_field :r2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r3 %>
+    <%= f.number_field :r3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r4 %>
+    <%= f.number_field :r4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r5 %>
+    <%= f.number_field :r5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r6 %>
+    <%= f.number_field :r6 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r7 %>
+    <%= f.number_field :r7 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r8 %>
+    <%= f.number_field :r8 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r9 %>
+    <%= f.number_field :r9 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r10 %>
+    <%= f.number_field :r10 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r11 %>
+    <%= f.number_field :r11 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r12 %>
+    <%= f.number_field :r12 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r13 %>
+    <%= f.number_field :r13 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r14 %>
+    <%= f.number_field :r14 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r15 %>
+    <%= f.number_field :r15 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r16 %>
+    <%= f.number_field :r16 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r17 %>
+    <%= f.number_field :r17 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r18 %>
+    <%= f.number_field :r18 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r19 %>
+    <%= f.number_field :r19 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r20 %>
+    <%= f.number_field :r20 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r21 %>
+    <%= f.number_field :r21 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :r22 %>
+    <%= f.number_field :r22 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
