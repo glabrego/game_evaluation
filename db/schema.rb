@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212093038) do
+ActiveRecord::Schema.define(version: 20161212094349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,23 @@ ActiveRecord::Schema.define(version: 20161212093038) do
     t.integer  "r22"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.float    "easy_of_use"
+    t.float    "content_quality"
+    t.float    "versatility"
+    t.float    "pedagogical_aspects"
+    t.float    "didactical_resources"
+    t.float    "stimulates_the_initiative_and_self_learning"
+    t.float    "audiovisual_quality"
+    t.float    "technical_and_static_elements"
+    t.float    "navigation_and_interaction"
+    t.float    "originality_and_use_of_advanced_tecnology"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   create_table "researchers", force: :cascade do |t|

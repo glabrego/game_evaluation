@@ -1,0 +1,77 @@
+<%= form_for(game) do |f| %>
+  <% if game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :easy_of_use %>
+    <%= f.text_field :easy_of_use %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content_quality %>
+    <%= f.text_field :content_quality %>
+  </div>
+
+  <div class="field">
+    <%= f.label :versatility %>
+    <%= f.text_field :versatility %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pedagogical_aspects %>
+    <%= f.text_field :pedagogical_aspects %>
+  </div>
+
+  <div class="field">
+    <%= f.label :didactical_resources %>
+    <%= f.text_field :didactical_resources %>
+  </div>
+
+  <div class="field">
+    <%= f.label :stimulates_the_initiative_and_self_learning %>
+    <%= f.text_field :stimulates_the_initiative_and_self_learning %>
+  </div>
+
+  <div class="field">
+    <%= f.label :audiovisual_quality %>
+    <%= f.text_field :audiovisual_quality %>
+  </div>
+
+  <div class="field">
+    <%= f.label :technical_and_static_elements %>
+    <%= f.text_field :technical_and_static_elements %>
+  </div>
+
+  <div class="field">
+    <%= f.label :navigation_and_interaction %>
+    <%= f.text_field :navigation_and_interaction %>
+  </div>
+
+  <div class="field">
+    <%= f.label :originality_and_use_of_advanced_tecnology %>
+    <%= f.text_field :originality_and_use_of_advanced_tecnology %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

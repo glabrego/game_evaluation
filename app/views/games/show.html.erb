@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @game.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @game.description %>
+</p>
+
+<p>
+  <strong>Easy of use:</strong>
+  <%= @game.easy_of_use %>
+</p>
+
+<p>
+  <strong>Content quality:</strong>
+  <%= @game.content_quality %>
+</p>
+
+<p>
+  <strong>Versatility:</strong>
+  <%= @game.versatility %>
+</p>
+
+<p>
+  <strong>Pedagogical aspects:</strong>
+  <%= @game.pedagogical_aspects %>
+</p>
+
+<p>
+  <strong>Didactical resources:</strong>
+  <%= @game.didactical_resources %>
+</p>
+
+<p>
+  <strong>Stimulates the initiative and self learning:</strong>
+  <%= @game.stimulates_the_initiative_and_self_learning %>
+</p>
+
+<p>
+  <strong>Audiovisual quality:</strong>
+  <%= @game.audiovisual_quality %>
+</p>
+
+<p>
+  <strong>Technical and static elements:</strong>
+  <%= @game.technical_and_static_elements %>
+</p>
+
+<p>
+  <strong>Navigation and interaction:</strong>
+  <%= @game.navigation_and_interaction %>
+</p>
+
+<p>
+  <strong>Originality and use of advanced tecnology:</strong>
+  <%= @game.originality_and_use_of_advanced_tecnology %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
