@@ -6,49 +6,41 @@ class Evaluation < ApplicationRecord
     end
 
     def content_quality_factor
-      # r8, r9, r10, r11, r12
       result = (((index.map{ |v| percentage(v.r8) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r9) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r10) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r11) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r12) }.reduce(&:+) / index.count) * 100)) * 10
       result = (1.0 / 50) * result
     end
 
     def versatility_factor
-      # r3, r4, r5, r18
       result = (((index.map{ |v| percentage(v.r3) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r4) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r5) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r18) }.reduce(&:+) / index.count) * 100)) * 10
       result = (1.0 / 40) * result
     end
 
     def pedagogical_aspects_factor
-      # r19
       result = ((index.map{ |v| percentage(v.r19) }.reduce(&:+) / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def didactical_resources_factor
-      # r20, r21
       result = (((index.map{ |v| percentage(v.r20) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r21) }.reduce(&:+) / index.count) * 100)) * 10
       result = (1.0 / 20) * result
     end
 
     def stimulates_the_initiative_and_self_learning_factor
-      # r22
       result = ((index.map{ |v| percentage(v.r22) }.reduce(&:+) / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def audiovisual_quality_factor
-      # r6
       result = ((index.map{ |v| percentage(v.r6) }.reduce(&:+) / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def technical_and_static_elements_factor
-      # r7
       result = ((index.map{ |v| percentage(v.r7) }.reduce(&:+) / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def navigation_and_interaction_factor
-      # r13, r14, r15, r16
       result = (((index.map{ |v| percentage(v.r13) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r14) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r15) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r16) }.reduce(&:+) / index.count) * 100)) * 10
       result = (1.0 / 40) * result
     end
