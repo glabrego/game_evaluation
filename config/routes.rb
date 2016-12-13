@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   devise_for :researchers, controllers: { registrations: 'registrations' }
 
   resources :games do
-    resources :evaluations
+    resources :evaluations, only: [:new, :create, :index, :show]
   end
 end
