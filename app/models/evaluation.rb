@@ -100,5 +100,9 @@ class Evaluation < ApplicationRecord
         return 1
       end
     end
+
+    def set_game(id)
+      $game = Game.find id
+    end
   end
 end
