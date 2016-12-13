@@ -10,14 +10,17 @@ class EvaluationsController < ApplicationController
 
   def new
     @evaluation = Evaluation.new
+    @game = Game.find params[:game_id]
   end
 
   def edit
   end
 
   def create
-    @evaluation = Evaluation.create(evaluation_params)
-    redirect_to evaluation_path(@evaluation)
+    @evaluation = Evaluation.new(evaluation_params)
+    @evaluation.game_id = params[:game_id]
+    @evaluation.save
+    redirect_to game_evaluation_path(@evaluation.game_id, @evaluation)
   end
 
   def update
