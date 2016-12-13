@@ -2,5 +2,7 @@
 
 <%= render 'form', game: @game %>
 
-<%= link_to 'Show', @game %> |
-<%= link_to 'Back', games_path %>
+<div class="container center">
+  <%= link_to 'Show', @game, class: 'waves-light btn' %>
+  <%= link_to 'Back', games_path, class: 'waves-light btn' %>
+</div>

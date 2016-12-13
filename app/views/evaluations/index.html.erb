@@ -1,15 +1,44 @@
 <h1>Evaluations: <%= $game.name %></h1>
-
-<p> System Quality: <%= Evaluation.system_quality.round(2) %> % </p>
-<p> Euclidean Distance from real to ideal system: <%= Evaluation.euclidean_distance.round(2) %> </p>
-
-
+<div class="container">
+  <table>
+    <thead>
+      <th>Requisito</th>
+      <th>Nota</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dimensão de Qualidade</td>
+        <td><%= Evaluation.funcionality_dimension.nan? ? ' - ' : Evaluation.funcionality_dimension.round(2) %>%</td>
+      </tr>
+      <tr>
+        <td>Dimensão de Eficiência</td>
+        <td><%= Evaluation.efficiency_dimension.nan? ? ' - ' : Evaluation.efficiency_dimension.round(2) %>%</td>
+      </tr>
+      <tr>
+        <td>Dimensão de Adaptabilidade</td>
+        <td><%= Evaluation.adaptability_dimension.nan? ? ' - ' : Evaluation.adaptability_dimension.round(2) %>%</td>
+      </tr>
+      <tr>
+        <td>Distância Euclidiana</td>
+        <td><%= Evaluation.euclidean_distance.nan? ? ' - ' : Evaluation.euclidean_distance.round(2) %></td>
+      </tr>
+      <tr>
+        <td>Qualidade do Sistema</td>
+        <td><%= Evaluation.system_quality.nan? ? ' - ' : Evaluation.system_quality.round(2) %>%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br />
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <div id="chart_div"></div>
 
-<%= link_to 'New Evaluation', new_game_evaluation_path, class: 'waves-effect waves-light btn' %>
+<div class="container center">
+  <%= link_to 'New Evaluation', new_game_evaluation_path, class: 'waves-effect waves-light btn' %>
+</div>
 
 <script type="text/javascript" charset="utf-8">
+
 google.charts.load('current', {packages: ['corechart']});
 google.charts.setOnLoadCallback(drawBasic);
 
@@ -31,9 +60,9 @@ function drawBasic() {
   var options = {
     title: 'Qualidade por Dimensão',
     series: {
-          0: {targetAxisIndex: 0},
-          1: {targetAxisIndex: 1}
-        },
+      0: {targetAxisIndex: 0},
+      1: {targetAxisIndex: 1}
+    },
     hAxis: {
       title: 'Pontos'
     },
