@@ -2,7 +2,7 @@ class EvaluationsController < ApplicationController
   before_action :set_evaluation, only: [:show, :edit, :update, :destroy]
 
   def index
-    @game = Game.find params[:game_id]
+    $game = Game.find params[:game_id]
   end
 
   def show
