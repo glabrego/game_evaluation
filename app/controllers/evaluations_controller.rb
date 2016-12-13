@@ -2,7 +2,7 @@ class EvaluationsController < ApplicationController
   before_action :set_evaluation, only: [:show, :edit, :update, :destroy]
 
   def index
-    @evaluations = Evaluation.all
+    @game = Game.find params[:game_id]
   end
 
   def show
@@ -13,9 +13,6 @@ class EvaluationsController < ApplicationController
     @game = Game.find params[:game_id]
   end
 
-  def edit
-  end
-
   def create
     @evaluation = Evaluation.new(evaluation_params)
     @evaluation.game_id = params[:game_id]
@@ -23,19 +20,10 @@ class EvaluationsController < ApplicationController
     redirect_to game_evaluation_path(@evaluation.game_id, @evaluation)
   end
 
-  def update
-    @evaluation.update(evaluation_params)
-    redirect_to evaluation_path(@evaluation)
-  end
-
-  def destroy
-    @evaluation.destroy
-    redirect_to root_path, alert: 'Evaluation Destroyed.'
-  end
-
   private
     def set_evaluation
       @evaluation = Evaluation.find(params[:id])
+      @game = Game.find(@evaluation.game_id)
     end
 
     def evaluation_params
