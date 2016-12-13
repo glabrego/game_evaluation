@@ -1,0 +1,9 @@
+<tr>
+  <td><%= game.name %></td>
+  <td><%= game.description %></td>
+  <td>
+    <%= link_to 'Show', game, class: 'waves-effect waves-light btn' %>
+    <%= link_to 'Edit', edit_game_path(game), class: 'waves-effect waves-light btn' %>
+    <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }, class: 'waves-effect waves-red btn' %>
+  </td>
+</tr>
