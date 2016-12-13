@@ -1,9 +1,15 @@
-<tr>
-  <td><%= game.name %></td>
-  <td><%= game.description %></td>
-  <td>
-    <%= link_to 'Show', game, class: 'waves-effect waves-light btn' %>
-    <%= link_to 'Edit', edit_game_path(game), class: 'waves-effect waves-light btn' %>
-    <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }, class: 'waves-effect waves-red btn' %>
-  </td>
-</tr>
+<li>
+  <div class="collapsible-header"><i class="material-icons">games</i><%= game.name %></div>
+  <div class="collapsible-body">
+    <p><%= game.description %></p>
+    <p><%= 'Dimensão X' %></p>
+    <p><%= 'Dimensão Y' %></p>
+    <p><%= 'Dimensão Z' %></p>
+    <p><%= 'Qualidade do Sistema' %></p>
+    <p>
+      <%= link_to 'Show', game, class: 'waves-effect waves-light btn' %>
+      <%= link_to 'Edit', edit_game_path(game), class: 'waves-effect waves-light btn' %>
+      <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }, class: 'waves-effect waves-red btn' %>
+    </p>
+  </div>
+</li>
