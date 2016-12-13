@@ -1,20 +1,17 @@
 <h1>Games</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <%= render partial: game %>
-    <% end %>
-  </tbody>
-</table>
+<ul class="collapsible popout" data-collapsible="accordion">
+  <% @games.each do |game| %>
+    <%= render partial: game %>
+  <% end %>
+</ul>
 
 <br>
 
 <%= link_to 'Cadastrar Jogo', new_game_path, class: 'waves-effect waves-light btn' %>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+   $('.collapsible').collapsible();
+  });
+</script>
