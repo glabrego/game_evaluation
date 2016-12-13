@@ -7,7 +7,8 @@
     <p><%= 'Dimensão Z' %></p>
     <p><%= 'Qualidade do Sistema' %></p>
     <p>
-      <%= link_to 'Show', game, class: 'waves-effect waves-light btn' %>
+      <%= link_to 'Detalhes', game, class: 'waves-effect waves-light btn' %>
+      <%= link_to 'Avaliação', game_evaluations_path(game.id), class: 'waves-effect waves-light btn' %>
       <%= link_to 'Edit', edit_game_path(game), class: 'waves-effect waves-light btn' %>
       <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }, class: 'waves-effect waves-red btn' %>
     </p>

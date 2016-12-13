@@ -27,63 +27,62 @@ class Evaluation < ApplicationRecord
       {
         easy_of_use: 0.5,
         content_quality: 0.5,
-        versatility: 0.44,
-        pedagogical_aspects: 0.11,
-        didactical_resources: 0.22,
-        stimulates_the_initiative_and_self_learning: 0.11,
-        audiovisual_quality: 0.25,
-        technical_and_static_elements: 0.25,
-        navigation_and_interaction: 0.25,
-        originality_and_use_of_advanced_tecnology: 0.25
+        versatility: 0.47,
+        pedagogical_aspects: 0.14,
+        didactical_resources: 0.25,
+        stimulates_the_initiative_and_self_learning: 0.14,
+        audiovisual_quality: 0.33,
+        technical_and_static_elements: 0.33,
+        navigation_and_interaction: 0.34,
       }
     end
 
     def index
-      evaluation ||= Evaluation.all
+      $game.evaluations
     end
 
     def easy_of_use_factor
-      result = (((index.map{ |v| percentage(v.r1) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r2) }.compact.reduce(&:+) / index.count) * 100)) * 10
+      result = (((index.map{ |v| percentage(v.r1) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r2) }.compact.reduce(&:+).to_f / index.count) * 100)) * 10
       result = (1.0 / 20) * result
     end
 
     def content_quality_factor
-      result = (((index.map{ |v| percentage(v.r8) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r9) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r10) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r11) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r12) }.compact.reduce(&:+) / index.count) * 100)) * 10
+      result = (((index.map{ |v| percentage(v.r8) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r9) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r10) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r11) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r12) }.compact.reduce(&:+).to_f / index.count) * 100)) * 10
       result = (1.0 / 50) * result
     end
 
     def versatility_factor
-      result = (((index.map{ |v| percentage(v.r3) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r4) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r5) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r18) }.compact.reduce(&:+) / index.count) * 100)) * 10
+      result = (((index.map{ |v| percentage(v.r3) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r4) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r5) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r18) }.compact.reduce(&:+).to_f / index.count) * 100)) * 10
       result = (1.0 / 40) * result
     end
 
     def pedagogical_aspects_factor
-      result = ((index.map{ |v| percentage(v.r19) }.compact.reduce(&:+) / index.count) * 100) * 10
+      result = ((index.map{ |v| percentage(v.r19) }.compact.reduce(&:+).to_f / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def didactical_resources_factor
-      result = (((index.map{ |v| percentage(v.r20) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r21) }.compact.reduce(&:+) / index.count) * 100)) * 10
+      result = (((index.map{ |v| percentage(v.r20) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r21) }.compact.reduce(&:+).to_f / index.count) * 100)) * 10
       result = (1.0 / 20) * result
     end
 
     def stimulates_the_initiative_and_self_learning_factor
-      result = ((index.map{ |v| percentage(v.r22) }.compact.reduce(&:+) / index.count) * 100) * 10
+      result = ((index.map{ |v| percentage(v.r22) }.compact.reduce(&:+).to_f / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def audiovisual_quality_factor
-      result = ((index.map{ |v| percentage(v.r6) }.compact.reduce(&:+) / index.count) * 100) * 10
+      result = ((index.map{ |v| percentage(v.r6) }.compact.reduce(&:+).to_f / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def technical_and_static_elements_factor
-      result = ((index.map{ |v| percentage(v.r7) }.compact.reduce(&:+) / index.count) * 100) * 10
+      result = ((index.map{ |v| percentage(v.r7) }.compact.reduce(&:+).to_f / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def navigation_and_interaction_factor
-      result = (((index.map{ |v| percentage(v.r13) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r14) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r15) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r16) }.compact.reduce(&:+) / index.count) * 100)) * 10
+      result = (((index.map{ |v| percentage(v.r13) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r14) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r15) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map{ |v| percentage(v.r16) }.compact.reduce(&:+).to_f / index.count) * 100)) * 10
       result = (1.0 / 40) * result
     end
 
