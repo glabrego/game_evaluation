@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :researchers, controllers: { registrations: 'registrations' }
 
-  resources :evaluations
-  resources :games
+  resources :games do
+    resources :evaluations, only: [:new, :create, :index, :show]
+  end
 end
