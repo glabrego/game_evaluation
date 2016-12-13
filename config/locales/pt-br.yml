@@ -1,0 +1,32 @@
+pt-br:
+  activerecord:
+    models:
+      evaluation: 'Avaliações'
+      game: 'Jogo'
+      researcher: 'Pesquisador'
+    attributes:
+      evaluation:
+        r1: 'Você conseguiu usar o software sem ler manuais exaustivamente.'
+        r2: 'Exite um sistema on-line para ajudar o usuário com dificultades adicionais.'
+        r3: 'O software pode ser facilmente integrado com outros ambientes educacionais.'
+        r4: 'O software permite configuração(nível, número de usuários on line, idioma,..).'
+        r5: 'O software inclui um sistema de avaliação durante o desenvolvimento do processo.'
+        r6: 'Não existe excesso de informação'
+        r7: 'Possui um bom design com títulos, botões e textos de fácil entendimento.'
+        r8: 'A informação é bem estruturada e distingue adequadamente os objetivos, contexto, resultados e recursos multimídia.'
+        r9: 'O conteúdo aparenta ter sido validado, ou seja, apresenta poucos ou nenhum erro.'
+        r10: 'As mensagens de alerta foram checada e não existem mensagens negativas ou com discriminação racial ou religiosa.'
+        r11: 'O conteudo está relacionado com problemas de seu interesse.'
+        r12: 'Exemplos, gráficos e simulações fazem parte do sistema.'
+        r13: 'O software tem uma boa estrutura que permite fácil acesso ao conteúdo e as atividades.'
+        r14: 'A velocidade de comunicação entre o programa e o usuário é adequada(animação, apresentação de conteúdo, leitura de dados,...).'
+        r15: 'A execução do programa é eficiente e sem erros operacionais.'
+        r16: 'O sistema de navegação é transparente, permitindo ao usuáro controlar as ações.'
+        r17: 'O sistema foi desenvolvido com criatividade.'
+        r18: 'O software permite novas técnicas e um melhor aprendizado.'
+        r19: 'O software proporciona atividades que mantém a curiosidade e interesses sem provocar ansiedade.'
+        r20: 'Fornece diferentes tipos de atividades, referentes à aquisição de conhecimento, que permitem diferentes formas de utilização do sistema.'
+        r21: 'Fornece ajuda como tutoriais, atividades guiadas e reforos.'
+        r22: 'Permite que os alunos as decisões relativas às tarefas a realizar, a escolha do módulo de estudo e o estudo da matéria.'
+      game:
+      researcher:

@@ -1,47 +1,47 @@
 class Evaluation < ApplicationRecord
   class << self
     def easy_of_use_factor
-      result = (((index.map{ |v| percentage(v.r1) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r2) }.reduce(&:+) / index.count) * 100)) * 10
+      result = (((index.map{ |v| percentage(v.r1) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r2) }.compact.reduce(&:+) / index.count) * 100)) * 10
       result = (1.0 / 20) * result
     end
 
     def content_quality_factor
-      result = (((index.map{ |v| percentage(v.r8) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r9) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r10) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r11) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r12) }.reduce(&:+) / index.count) * 100)) * 10
+      result = (((index.map{ |v| percentage(v.r8) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r9) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r10) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r11) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r12) }.compact.reduce(&:+) / index.count) * 100)) * 10
       result = (1.0 / 50) * result
     end
 
     def versatility_factor
-      result = (((index.map{ |v| percentage(v.r3) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r4) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r5) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r18) }.reduce(&:+) / index.count) * 100)) * 10
+      result = (((index.map{ |v| percentage(v.r3) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r4) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r5) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r18) }.compact.reduce(&:+) / index.count) * 100)) * 10
       result = (1.0 / 40) * result
     end
 
     def pedagogical_aspects_factor
-      result = ((index.map{ |v| percentage(v.r19) }.reduce(&:+) / index.count) * 100) * 10
+      result = ((index.map{ |v| percentage(v.r19) }.compact.reduce(&:+) / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def didactical_resources_factor
-      result = (((index.map{ |v| percentage(v.r20) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r21) }.reduce(&:+) / index.count) * 100)) * 10
+      result = (((index.map{ |v| percentage(v.r20) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r21) }.compact.reduce(&:+) / index.count) * 100)) * 10
       result = (1.0 / 20) * result
     end
 
     def stimulates_the_initiative_and_self_learning_factor
-      result = ((index.map{ |v| percentage(v.r22) }.reduce(&:+) / index.count) * 100) * 10
+      result = ((index.map{ |v| percentage(v.r22) }.compact.reduce(&:+) / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def audiovisual_quality_factor
-      result = ((index.map{ |v| percentage(v.r6) }.reduce(&:+) / index.count) * 100) * 10
+      result = ((index.map{ |v| percentage(v.r6) }.compact.reduce(&:+) / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def technical_and_static_elements_factor
-      result = ((index.map{ |v| percentage(v.r7) }.reduce(&:+) / index.count) * 100) * 10
+      result = ((index.map{ |v| percentage(v.r7) }.compact.reduce(&:+) / index.count) * 100) * 10
       result = (1.0 / 10) * result
     end
 
     def navigation_and_interaction_factor
-      result = (((index.map{ |v| percentage(v.r13) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r14) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r15) }.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r16) }.reduce(&:+) / index.count) * 100)) * 10
+      result = (((index.map{ |v| percentage(v.r13) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r14) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r15) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r16) }.compact.reduce(&:+) / index.count) * 100)) * 10
       result = (1.0 / 40) * result
     end
 
