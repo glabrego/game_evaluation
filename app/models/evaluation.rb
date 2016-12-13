@@ -1,4 +1,6 @@
 class Evaluation < ApplicationRecord
+  belongs_to :game
+
   class << self
     def easy_of_use_factor
       result = (((index.map{ |v| percentage(v.r1) }.compact.reduce(&:+) / index.count) * 100) + ((index.map{ |v| percentage(v.r2) }.compact.reduce(&:+) / index.count) * 100)) * 10
