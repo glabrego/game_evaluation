@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :games
+  root to: 'games#index'
+
   devise_for :researchers
-  root to: 'evaluations#index'
+
   resources :evaluations
+  resources :games
 end
