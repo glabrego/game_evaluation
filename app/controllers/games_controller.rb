@@ -43,6 +43,6 @@ class GamesController < ApplicationController
     end
 
     def game_params
-      params.require(:game).permit(:name, :description, :easy_of_use, :content_quality, :versatility, :pedagogical_aspects, :didactical_resources, :stimulates_the_initiative_and_self_learning, :audiovisual_quality, :technical_and_static_elements, :navigation_and_interaction, :originality_and_use_of_advanced_tecnology)
+      params.require(:game).permit(:name, :description, :link, :how_to_play, :easy_of_use, :content_quality, :versatility, :pedagogical_aspects, :didactical_resources, :stimulates_the_initiative_and_self_learning, :audiovisual_quality, :technical_and_static_elements, :navigation_and_interaction, :originality_and_use_of_advanced_tecnology)
     end
 end
