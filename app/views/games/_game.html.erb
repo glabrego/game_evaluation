@@ -4,6 +4,7 @@
   <div class="collapsible-body">
     <div class="container center">
       <h5><%= game.description %></h5>
+      <%= link_to game.link %>
     </div>
     <div class="container">
       <table>
@@ -13,24 +14,8 @@
         </thead>
         <tbody>
           <tr>
-            <td>Dimensão de Qualidade</td>
-            <td><%= Evaluation.funcionality_dimension.round(2) || '-' %>%</td>
-          </tr>
-          <tr>
-            <td>Dimensão de Eficiência</td>
-            <td><%= Evaluation.efficiency_dimension.round(2) || '-' %>%</td>
-          </tr>
-          <tr>
-            <td>Dimensão de Adaptabilidade</td>
-            <td><%= Evaluation.adaptability_dimension.round(2) || '-' %>%</td>
-          </tr>
-          <tr>
-            <td>Distância Euclidiana</td>
-            <td><%= Evaluation.euclidean_distance.round(2) || '-' %></td>
-          </tr>
-          <tr>
             <td>Qualidade do Sistema</td>
-            <td><%= Evaluation.system_quality.round(2) || '-' %>%</td>
+            <td><%= Evaluation.system_quality.nan? ? ' - ' : Evaluation.system_quality.round(2) %>%</td>
           </tr>
         </tbody>
       </table>
