@@ -17,7 +17,7 @@ class EvaluationsController < ApplicationController
     @evaluation = Evaluation.new(evaluation_params)
     @evaluation.game_id = params[:game_id]
     @evaluation.save
-    redirect_to game_evaluation_path(@evaluation.game_id, @evaluation)
+    redirect_to game_evaluation_path(@evaluation.game_id, @evaluation.id)
   end
 
   private
