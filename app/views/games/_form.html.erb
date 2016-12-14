@@ -4,9 +4,9 @@
       <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
 
       <ul>
-      <% game.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% game.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -33,55 +33,75 @@
 
   <div class="field">
     <%= f.label :easy_of_use %>
-    <%= f.text_field :easy_of_use %>
+    <%= f.text_field :easy_of_use, class: 'factors dimension1' %>
   </div>
 
   <div class="field">
     <%= f.label :content_quality %>
-    <%= f.text_field :content_quality %>
+    <%= f.text_field :content_quality, class: 'factors dimension1' %>
   </div>
 
   <div class="field">
     <%= f.label :versatility %>
-    <%= f.text_field :versatility %>
+    <%= f.text_field :versatility, class: 'factors dimension2'%>
   </div>
 
   <div class="field">
     <%= f.label :pedagogical_aspects %>
-    <%= f.text_field :pedagogical_aspects %>
+    <%= f.text_field :pedagogical_aspects, class: 'factors dimension2' %>
   </div>
 
   <div class="field">
     <%= f.label :didactical_resources %>
-    <%= f.text_field :didactical_resources %>
+    <%= f.text_field :didactical_resources, class: 'factors dimension2' %>
   </div>
 
   <div class="field">
     <%= f.label :stimulates_the_initiative_and_self_learning %>
-    <%= f.text_field :stimulates_the_initiative_and_self_learning %>
+    <%= f.text_field :stimulates_the_initiative_and_self_learning, class: 'factors dimension2' %>
   </div>
 
   <div class="field">
     <%= f.label :audiovisual_quality %>
-    <%= f.text_field :audiovisual_quality %>
+    <%= f.text_field :audiovisual_quality, class: 'factors dimension3' %>
   </div>
 
   <div class="field">
     <%= f.label :technical_and_static_elements %>
-    <%= f.text_field :technical_and_static_elements %>
+    <%= f.text_field :technical_and_static_elements, class: 'factors dimension3' %>
   </div>
 
   <div class="field">
     <%= f.label :navigation_and_interaction %>
-    <%= f.text_field :navigation_and_interaction %>
-  </div>
-
-  <div class="field">
-    <%= f.label :originality_and_use_of_advanced_tecnology %>
-    <%= f.text_field :originality_and_use_of_advanced_tecnology %>
+    <%= f.text_field :navigation_and_interaction, class: 'factors dimension3' %>
   </div>
 
   <div class="actions container center">
     <%= f.submit 'Salvar Jogo', class: 'waves-light btn' %>
   </div>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+  $('input.factors').each(function(i, el) {
+    $(el).keypress(function(e) {
+      if ((!(e.which >= 48 && e.which <= 57) && !(e.which === 46)) || (e.which === 46 && $(el).val().indexOf('.') > -1)) {
+        e.preventDefault();
+      } else {
+        var tamanho = $(el).val().length;
+        if (tamanho === 0) {
+          if ((e.which > 49 && e.which <= 57) || e.which === 46) {
+            e.preventDefault();
+          }
+        } else if (tamanho === 1) {
+          if (e.which != 46) {
+            e.preventDefault();
+          }
+        } else if ($(el).val()[0] === '1' && e.which !== 48) {
+          e.preventDefault();
+        }
+      }
+    })
+  })
+});
+</script>
