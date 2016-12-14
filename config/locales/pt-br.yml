@@ -44,3 +44,16 @@ pt-br:
         navigation_and_interaction: 'Navegação e Interação'
         originality_and_use_of_advanced_tecnology: 'Originalidade e Uso de Tecnologias Avançadas'
       researcher:
+    errors:
+      models:
+        game:
+          attributes:
+            name:
+              blank: 'não pode ser nulo.'
+            description:
+              blank: 'não pode ser nulo.'
+            link:
+              blank: 'não pode ser nulo.'
+            how_to_play:
+              blank: 'não pode ser nulo.'
+
