@@ -29,4 +29,31 @@ pt-br:
         r21: 'Fornece ajuda como tutoriais, atividades guiadas e reforos.'
         r22: 'Permite que os alunos as decisões relativas às tarefas a realizar, a escolha do módulo de estudo e o estudo da matéria.'
       game:
+        name: 'Nome'
+        description: 'Descrição'
+        link: 'Link'
+        how_to_play: 'Como jogar'
+        easy_of_use: 'Facilidade de Uso'
+        content_quality: 'Qualidade do Conteúdo'
+        versatility: 'Versatilidade'
+        pedagogical_aspects: 'Aspectos Pedagógicos'
+        didactical_resources: 'Fontes Didáticas'
+        stimulates_the_initiative_and_self_learning: 'Estimula aprendizado e pró-atividade'
+        audiovisual_quality: 'Qualidade Audiovisual'
+        technical_and_static_elements: 'Elementos Estáticos e Técnicos'
+        navigation_and_interaction: 'Navegação e Interação'
+        originality_and_use_of_advanced_tecnology: 'Originalidade e Uso de Tecnologias Avançadas'
       researcher:
+    errors:
+      models:
+        game:
+          attributes:
+            name:
+              blank: 'não pode ser nulo.'
+            description:
+              blank: 'não pode ser nulo.'
+            link:
+              blank: 'não pode ser nulo.'
+            how_to_play:
+              blank: 'não pode ser nulo.'
+

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
 class RegistrationsController < Devise::RegistrationsController
   private
+
     def sign_up_params
       params.require(:researcher).permit(:name, :email, :password, :password_confirmation)
     end

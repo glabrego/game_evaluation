@@ -1,72 +1,115 @@
-<p>
-  <strong>Name:</strong>
-  <%= @game.name %>
-</p>
+<div class="row">
+  <h4>Detalhes do Jogo</h4>
+  <hr />
+</div>
+<div class="container">
+  <div class="row">
+    <strong>Name:</strong>
+    <%= @game.name %>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @game.description %>
-</p>
+  <div class="row">
+    <strong>Description:</strong>
+    <%= @game.description %>
+  </div>
 
-<p>
-  <strong>Link:</strong>
-  <%= @game.link%>
-</p>
+  <div class="row">
+    <strong>Link:</strong>
+    <%= link_to @game.link %>
+  </div>
 
-<p>
-  <strong>How to Play:</strong>
-  <%= @game.how_to_play%>
-</p>
+  <div class="row">
+    <strong>How to Play:</strong>
+    <%= @game.how_to_play%>
+  </div>
+</div>
 
-<p>
-  <strong>Easy of use:</strong>
-  <%= @game.easy_of_use %>
-</p>
+<div class="row">
+  <h4>Peso dos Fatores</h4>
+  <hr />
+</div>
 
-<p>
-  <strong>Content quality:</strong>
-  <%= @game.content_quality %>
-</p>
+<div class="container">
+  <div class="row">
+    <h5> Dominio de Funcionalidade </h5>
+  <table>
+    <thead>
+      <th>Fator</th>
+      <th>Peso</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Easy of use</td>
+        <td><%= @game.easy_of_use %></td>
+      </tr>
+      <tr>
+        <td>Content Quality</td>
+        <td><%= @game.content_quality %></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+<br />
 
-<p>
-  <strong>Versatility:</strong>
-  <%= @game.versatility %>
-</p>
+<div class="container">
+  <div class="row">
+    <h5> Dominio de Eficiência</h5>
+    <table>
+      <thead>
+        <th>Fator</th>
+        <th>Peso</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Versatility</td>
+          <td><%= @game.versatility %></td>
+        </tr>
+        <tr>
+          <td>Pedagogical aspects</td>
+          <td><%= @game.pedagogical_aspects %></td>
+        </tr>
+        <tr>
+          <td>Didactical resources</td>
+          <td><%= @game.didactical_resources %></td>
+        </tr>
+        <tr>
+          <td>Stimulates the initiative and self learning</td>
+          <td><%= @game.stimulates_the_initiative_and_self_learning %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br />
 
-<p>
-  <strong>Pedagogical aspects:</strong>
-  <%= @game.pedagogical_aspects %>
-</p>
+<div class="container">
+  <div class="row">
+    <h5>Domínio de Adaptabilidade</h5>
+    <table>
+      <thead>
+        <th>Fator</th>
+        <th>Peso</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Audiovisual quality</td>
+          <td><%= @game.audiovisual_quality %></td>
+        </tr>
+        <tr>
+          <td>Technical and static elements</td>
+          <td><%= @game.technical_and_static_elements %></td>
+        </tr>
+        <tr>
+          <td>Navigation and interaction</td>
+          <td><%= @game.navigation_and_interaction %></td>
+        </tr>
+     </tbody>
+    </table>
+  </div>
+</div>
 
-<p>
-  <strong>Didactical resources:</strong>
-  <%= @game.didactical_resources %>
-</p>
-
-<p>
-  <strong>Stimulates the initiative and self learning:</strong>
-  <%= @game.stimulates_the_initiative_and_self_learning %>
-</p>
-
-<p>
-  <strong>Audiovisual quality:</strong>
-  <%= @game.audiovisual_quality %>
-</p>
-
-<p>
-  <strong>Technical and static elements:</strong>
-  <%= @game.technical_and_static_elements %>
-</p>
-
-<p>
-  <strong>Navigation and interaction:</strong>
-  <%= @game.navigation_and_interaction %>
-</p>
-
-<p>
-  <strong>Originality and use of advanced tecnology:</strong>
-  <%= @game.originality_and_use_of_advanced_tecnology %>
-</p>
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<div class="container center">
+  <%= link_to 'Edit', edit_game_path(@game), class:'waves-light btn' %>
+  <%= link_to 'Back', games_path, class:'waves-light btn' %>
+</div>

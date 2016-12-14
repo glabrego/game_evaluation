@@ -1,10 +1,28 @@
+<ul id="dropdown1" class="dropdown-content">
+  <li><%= link_to 'Novo Jogo', new_game_path if current_researcher %></li>
+  <li><%= link_to 'Meus Jogos', root_path if current_researcher %></li>
+  <li><%= link_to 'Meus Dados', edit_researcher_registration_path if current_researcher %></li>
+  <li class="divider"></li>
+  <li><%= link_to 'Logout', destroy_researcher_session_path, 'data-method': 'delete' if current_researcher %></li>
+</ul>
 <nav class="blue darken-2">
-  <div class="nav-wrapper container">
-    <a href="#" data-activates="slide-out" class="button-collapse hide-on-large-only"><i class="material-icons">menu</i></a>
+  <div class="nav-wrapper">
     <%= link_to 'Game Evaluation', root_path, class: 'brand-logo center' %>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><%= current_researcher.email if current_researcher %></li>
-      <li><%= link_to 'Logout', destroy_researcher_session_path, 'data-method': 'delete' if current_researcher %></li>
+    <ul class="right hide-on-med-and-down">
+      <div class="user-dropdown">
+        <li>
+          <a class="dropdown-button" data-activates="dropdown1">
+            <%= current_researcher.name || current_researcher.email if current_researcher %>
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+      </div>
     </ul>
   </div>
 </nav>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+    $(".dropdown-button").dropdown()
+})
+</script>

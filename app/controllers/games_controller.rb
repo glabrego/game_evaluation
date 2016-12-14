@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class GamesController < ApplicationController
   before_action :authenticate_researcher!
   before_action :set_game, only: [:show, :edit, :update, :destroy]
@@ -18,8 +19,7 @@ class GamesController < ApplicationController
     respond_with(@game)
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @game = Game.new(game_params)
@@ -38,11 +38,12 @@ class GamesController < ApplicationController
   end
 
   private
-    def set_game
-      @game = Game.find(params[:id])
-    end
 
-    def game_params
-      params.require(:game).permit(:name, :description, :link, :how_to_play, :easy_of_use, :content_quality, :versatility, :pedagogical_aspects, :didactical_resources, :stimulates_the_initiative_and_self_learning, :audiovisual_quality, :technical_and_static_elements, :navigation_and_interaction, :originality_and_use_of_advanced_tecnology)
-    end
+  def set_game
+    @game = Game.find(params[:id])
+  end
+
+  def game_params
+    params.require(:game).permit(:name, :description, :link, :how_to_play, :easy_of_use, :content_quality, :versatility, :pedagogical_aspects, :didactical_resources, :stimulates_the_initiative_and_self_learning, :audiovisual_quality, :technical_and_static_elements, :navigation_and_interaction, :originality_and_use_of_advanced_tecnology)
+  end
 end

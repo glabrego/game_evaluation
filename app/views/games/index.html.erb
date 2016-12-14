@@ -1,4 +1,6 @@
-<h1>Games</h1>
+<div class="container center">
+  <h3>Games</h3>
+</div>
 
 <ul class="collapsible popout" data-collapsible="accordion">
   <% @games.each do |game| %>
@@ -8,7 +10,9 @@
 
 <br>
 
-<%= link_to 'Cadastrar Jogo', new_game_path, class: 'waves-effect waves-light btn' %>
+<div class="container center">
+  <%= link_to 'Cadastrar Jogo', new_game_path, class: 'waves-effect waves-light btn' %>
+</div>
 
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function(){

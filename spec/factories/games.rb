@@ -1,7 +1,8 @@
+# frozen_string_literal: true
 FactoryGirl.define do
   factory :game do
-    name "MyString"
-    description "MyString"
+    name 'MyString'
+    description 'MyString'
     easy_of_use 1.5
     content_quality 1.5
     versatility 1.5
