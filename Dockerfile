@@ -1,4 +1,5 @@
 FROM ruby:2.4
+MAINTAINER 'glabrego@gmail.com'
 
 RUN mkdir -p /usr/src/game_evaluation
 WORKDIR  /usr/src/game_evaluation
