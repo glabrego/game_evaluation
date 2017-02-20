@@ -1,0 +1,23 @@
+# If you're using docker for development, use this database.yml instead of the default
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password:
+  host: db
+
+development:
+  <<: *default
+  database: game_evaluation_development
+
+test:
+  <<: *default
+  database: game_evaluation_test
+
+production:
+  <<: *default
+  database: game_evaluation_production
+  username: game_evaluation
+  password: <%= ENV['GAME_EVALUATION_DATABASE_PASSWORD'] %>
