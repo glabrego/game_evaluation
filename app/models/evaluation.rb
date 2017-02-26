@@ -24,24 +24,6 @@ class Evaluation < ApplicationRecord
       ((1 - (euclidean_distance / Math.sqrt(10))) * 100)
     end
 
-    def factors_weight
-      {
-        easy_of_use: 0.5,
-        content_quality: 0.5,
-        versatility: 0.47,
-        pedagogical_aspects: 0.14,
-        didactical_resources: 0.25,
-        stimulates_the_initiative_and_self_learning: 0.14,
-        audiovisual_quality: 0.33,
-        technical_and_static_elements: 0.33,
-        navigation_and_interaction: 0.34
-      }
-    end
-
-    def index
-      $game.evaluations
-    end
-
     def easy_of_use_factor
       result = (((index.map { |v| percentage(v.r1) }.compact.reduce(&:+).to_f / index.count) * 100) + ((index.map { |v| percentage(v.r2) }.compact.reduce(&:+).to_f / index.count) * 100)) * 10
       result = (1.0 / 20) * result
@@ -87,6 +69,20 @@ class Evaluation < ApplicationRecord
       result = (1.0 / 40) * result
     end
 
+    def factors_weight
+      {
+        easy_of_use: 0.5,
+        content_quality: 0.5,
+        versatility: 0.47,
+        pedagogical_aspects: 0.14,
+        didactical_resources: 0.25,
+        stimulates_the_initiative_and_self_learning: 0.14,
+        audiovisual_quality: 0.33,
+        technical_and_static_elements: 0.33,
+        navigation_and_interaction: 0.34
+      }
+    end
+
     def percentage(q)
       case q
       when 1
@@ -104,6 +100,10 @@ class Evaluation < ApplicationRecord
 
     def set_game(id)
       $game = Game.find id
+    end
+
+    def index
+      $game.evaluations
     end
   end
 end
