@@ -1,5 +1,5 @@
 <div class="container center">
-<h3>Evaluations: <%= $game.name %></h3>
+  <h3>Evaluations: <%= @game.name %></h3>
 </div>
 <div class="container">
   <table>
@@ -10,23 +10,23 @@
     <tbody>
       <tr>
         <td>Dimensão de Qualidade</td>
-        <td><%= Evaluation.funcionality_dimension.nan? ? ' - ' : Evaluation.funcionality_dimension.round(2) %>%</td>
+        <td><%= @game.funcionality_dimension.nan? ? ' - ' : @game.funcionality_dimension.round(2) %>%</td>
       </tr>
       <tr>
         <td>Dimensão de Eficiência</td>
-        <td><%= Evaluation.efficiency_dimension.nan? ? ' - ' : Evaluation.efficiency_dimension.round(2) %>%</td>
+        <td><%= @game.efficiency_dimension.nan? ? ' - ' : @game.efficiency_dimension.round(2) %>%</td>
       </tr>
       <tr>
         <td>Dimensão de Adaptabilidade</td>
-        <td><%= Evaluation.adaptability_dimension.nan? ? ' - ' : Evaluation.adaptability_dimension.round(2) %>%</td>
+        <td><%= @game.adaptability_dimension.nan? ? ' - ' : @game.adaptability_dimension.round(2) %>%</td>
       </tr>
       <tr>
         <td>Distância Euclidiana</td>
-        <td><%= Evaluation.euclidean_distance.nan? ? ' - ' : Evaluation.euclidean_distance.round(2) %></td>
+        <td><%= @game.euclidean_distance.nan? ? ' - ' : @game.euclidean_distance.round(2) %></td>
       </tr>
       <tr>
         <td>Qualidade do Sistema</td>
-        <td><%= Evaluation.system_quality.nan? ? ' - ' : Evaluation.system_quality.round(2) %>%</td>
+        <td><%= @game.system_quality.nan? ? ' - ' : @game.system_quality.round(2) %>%</td>
       </tr>
     </tbody>
   </table>
@@ -54,7 +54,7 @@ function drawBasic() {
 
   data.addRows([
       [1,  0, 0, 0],
-      [2, <%= Evaluation.funcionality_dimension%>, <%= Evaluation.efficiency_dimension %>, <%= Evaluation.adaptability_dimension %>]
+      [2, <%= @game.funcionality_dimension%>, <%= @game.efficiency_dimension %>, <%= @game.adaptability_dimension %>]
   ]);
 
 
