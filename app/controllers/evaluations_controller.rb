@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 class EvaluationsController < ApplicationController
   before_action :set_evaluation, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: [:show, :index]
 
   def index
-    $game = Game.find params[:game_id]
   end
 
   def show; end
@@ -21,6 +21,10 @@ class EvaluationsController < ApplicationController
   end
 
   private
+
+  def set_game
+    @game = Game.find params[:game_id]
+  end
 
   def set_evaluation
     @evaluation = Evaluation.find(params[:id])

@@ -1,4 +1,3 @@
-<% Evaluation.set_game(game.id) %>
 <li>
   <div class="collapsible-header"><i class="material-icons">games</i><%= game.name %></div>
   <div class="collapsible-body">
@@ -15,7 +14,7 @@
         <tbody>
           <tr>
             <td>Qualidade do Sistema</td>
-            <td><%= Evaluation.system_quality.nan? ? ' - ' : Evaluation.system_quality.round(2) %>%</td>
+            <td><%= game.system_quality.nan? ? ' - ' : game.system_quality.round(2) %>%</td>
           </tr>
         </tbody>
       </table>
