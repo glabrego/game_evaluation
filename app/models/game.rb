@@ -70,18 +70,13 @@ class Game < ApplicationRecord
 
   private
 
-  def to_percentage(point)
-    case point
-    when 1
-      0
-    when 2
-      0.25
-    when 3
-      0.5
-    when 4
-      0.75
-    when 5
-      1
+  def percentage
+    Hash.new.tap do |p|
+      p["1"] = 0
+      p["2"] = 0.25
+      p["3"] = 0.5
+      p["4"] = 0.75
+      p["5"] = 1
     end
   end
 
@@ -100,6 +95,6 @@ class Game < ApplicationRecord
   end
 
   def calculate_question(question)
-    (question.map{ |q| to_percentage(q) }.compact.sum.to_f / evaluations.count) * 100
+    (question.map{ |q| percentage["#{q}"]}.compact.sum.to_f / evaluations.count) * 100
   end
 end
