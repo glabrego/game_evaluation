@@ -1,0 +1,39 @@
+<script type="text/javascript" charset="utf-8">
+
+google.charts.load('current', {packages: ['corechart']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+  var data = new google.visualization.DataTable();
+  var data = new google.visualization.DataTable();
+  data.addColumn('number', 'Dimensões');
+  data.addColumn('number', 'Funcionalidade');
+  data.addColumn('number', 'Eficiencia');
+  data.addColumn('number', 'Adaptabilidade');
+
+  data.addRows([
+      [1,  0, 0, 0],
+      [2, <%= game.funcionality_dimension%>, <%= game.efficiency_dimension %>, <%= game.adaptability_dimension %>]
+  ]);
+
+
+  var options = {
+    title: 'Qualidade por Dimensão',
+    series: {
+      0: {targetAxisIndex: 0},
+      1: {targetAxisIndex: 1}
+    },
+    hAxis: {
+      title: 'Pontos'
+    },
+    vAxis: {
+      title: '%'
+    }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+  chart.draw(data, options);
+}
+</script>
