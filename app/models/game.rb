@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class Game < ApplicationRecord
   has_many :evaluations
   validates :name, :description, :link, :how_to_play, presence: true
@@ -71,17 +72,17 @@ class Game < ApplicationRecord
   private
 
   def percentage
-    Hash.new.tap do |p|
-      p["1"] = 0
-      p["2"] = 0.25
-      p["3"] = 0.5
-      p["4"] = 0.75
-      p["5"] = 1
+    {}.tap do |p|
+      p['1'] = 0
+      p['2'] = 0.25
+      p['3'] = 0.5
+      p['4'] = 0.75
+      p['5'] = 1
     end
   end
 
   def factors_weight
-    Hash.new.tap do |factor|
+    {}.tap do |factor|
       factor[:easy_of_use] = 0.5
       factor[:content_quality] = 0.5
       factor[:versatility] = 0.47
@@ -95,6 +96,6 @@ class Game < ApplicationRecord
   end
 
   def calculate_question(question)
-    (question.map{ |q| percentage["#{q}"]}.compact.sum.to_f / evaluations.count) * 100
+    (question.map { |q| percentage[q.to_s] }.compact.sum.to_f / evaluations.count) * 100
   end
 end

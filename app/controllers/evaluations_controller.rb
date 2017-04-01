@@ -1,10 +1,10 @@
 # frozen_string_literal: true
-class EvaluationsController < ApplicationController
-  before_action :set_evaluation, only: [:show, :edit, :update, :destroy]
-  before_action :set_game, only: [:show, :index]
 
-  def index
-  end
+class EvaluationsController < ApplicationController
+  before_action :set_evaluation, only: %i(show edit update destroy)
+  before_action :set_game, only: %i(show index)
+
+  def index; end
 
   def show; end
 

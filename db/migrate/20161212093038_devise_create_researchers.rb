@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class DeviseCreateResearchers < ActiveRecord::Migration[5.0]
   def change
     create_table :researchers do |t|
