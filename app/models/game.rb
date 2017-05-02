@@ -25,48 +25,39 @@ class Game < ApplicationRecord
   end
 
   def easy_of_use_factor
-    result = (calculate_question(evaluations.pluck(:r1)) + calculate_question(evaluations.pluck(:r2))) * 10
-    result = (1.0 / 20) * result
+    calculate_questions(evaluations.pluck(:r1, :r2)) * (1.0 / 20)
   end
 
   def content_quality_factor
-    result = (calculate_question(evaluations.pluck(:r8)) + calculate_question(evaluations.pluck(:r9)) + calculate_question(evaluations.pluck(:r10)) + calculate_question(evaluations.pluck(:r11)) + calculate_question(evaluations.pluck(:r12))) * 10
-    result = (1.0 / 50) * result
+    calculate_questions(evaluations.pluck(:r8, :r9, :r10, :r11, :r12)) * (1.0 / 50)
   end
 
   def versatility_factor
-    result = (calculate_question(evaluations.pluck(:r3)) + calculate_question(evaluations.pluck(:r4)) + calculate_question(evaluations.pluck(:r5)) + calculate_question(evaluations.pluck(:r18))) * 10
-    result = (1.0 / 40) * result
+    calculate_questions(evaluations.pluck(:r3, :r4, :r5, :r18)) * (1.0 / 40)
   end
 
   def pedagogical_aspects_factor
-    result = calculate_question(evaluations.pluck(:r19)) * 10
-    result = (1.0 / 10) * result
+    calculate_questions([evaluations.pluck(:r19)]) * (1.0 / 10)
   end
 
   def didactical_resources_factor
-    result = (calculate_question(evaluations.pluck(:r20)) + calculate_question(evaluations.pluck(:r21))) * 10
-    result = (1.0 / 20) * result
+    calculate_questions(evaluations.pluck(:r20, :r21)) * (1.0 / 20)
   end
 
   def stimulates_the_initiative_and_self_learning_factor
-    result = calculate_question(evaluations.pluck(:r22)) * 10
-    result = (1.0 / 10) * result
+    calculate_questions([evaluations.pluck(:r22)]) * (1.0 / 10)
   end
 
   def audiovisual_quality_factor
-    result = calculate_question(evaluations.pluck(:r6)) * 10
-    result = (1.0 / 10) * result
+    calculate_questions([evaluations.pluck(:r6)]) * (1.0 / 10)
   end
 
   def technical_and_static_elements_factor
-    result = calculate_question(evaluations.pluck(:r7)) * 10
-    result = (1.0 / 10) * result
+    calculate_questions([evaluations.pluck(:r7)]) * (1.0 / 10)
   end
 
   def navigation_and_interaction_factor
-    result = (calculate_question(evaluations.pluck(:r13)) + calculate_question(evaluations.pluck(:r14)) + calculate_question(evaluations.pluck(:r15)) + calculate_question(evaluations.pluck(:r16))) * 10
-    result = (1.0 / 40) * result
+    calculate_questions(evaluations.pluck(:r13, :r14, :r15, :r16)) * (1.0 / 40)
   end
 
   private
@@ -74,10 +65,10 @@ class Game < ApplicationRecord
   def percentage
     {}.tap do |p|
       p['1'] = 0
-      p['2'] = 0.25
-      p['3'] = 0.5
-      p['4'] = 0.75
-      p['5'] = 1
+      p['2'] = 25
+      p['3'] = 50
+      p['4'] = 75
+      p['5'] = 100
     end
   end
 
@@ -95,7 +86,7 @@ class Game < ApplicationRecord
     end
   end
 
-  def calculate_question(question)
-    (question.map { |q| percentage[q.to_s] }.compact.sum.to_f / evaluations.count) * 100
+  def calculate_questions(questions)
+    questions.map { |question| (question.map { |q| percentage[q.to_s] }.compact.sum.to_f / evaluations.count) }.reduce(&:+) * 10
   end
 end
