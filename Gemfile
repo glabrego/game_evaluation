@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '2.4.0'
+ruby '2.4.1'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'materialize-sass'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
-gem 'rails', '~> 5.0.2'
+gem 'rails', '~> 5.1.0'
 gem 'responders'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
