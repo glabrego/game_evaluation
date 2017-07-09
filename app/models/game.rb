@@ -4,6 +4,8 @@ class Game < ApplicationRecord
   has_many :evaluations
   validates :name, :description, :link, :how_to_play, presence: true
 
+  NOT_RATED = 0
+
   def funcionality_dimension
     (easy_of_use_factor * factors_weight[:easy_of_use]) + (content_quality_factor * factors_weight[:content_quality])
   end
@@ -87,6 +89,7 @@ class Game < ApplicationRecord
   end
 
   def calculate_questions(questions)
+    return NOT_RATED if questions.empty?
     questions.map { |question| (question.map { |q| percentage[q.to_s] }.compact.sum.to_f / evaluations.count) }.reduce(&:+) * 10
   end
 end
