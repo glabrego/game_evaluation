@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '2.5.0'
+ruby '2.5.1'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
